@@ -1,0 +1,20 @@
+{
+  "name": "Argon OLED Display",
+  "version": "0.1.0",
+  "slug": "argon_oled1",
+  "description": "Displays Home Assistant data on Argon ONE V5 OLED via MQTT",
+  "startup": "services",
+  "boot": "auto",
+  "privileged": ["SYS_RAWIO"],
+  "host_network": true,
+  "devices": ["/dev/i2c-1"],
+  "options": {
+    "mqtt_broker": "192.168.1.100",
+    "mqtt_topic": "ha/pi/cpu_temp"
+  },
+  "schema": {
+    "mqtt_broker": "str",
+    "mqtt_topic": "str"
+  },
+  "image": "local/argon_oled1"
+}
